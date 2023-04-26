@@ -1,0 +1,326 @@
+{% extends 'dashboard/base.html'%}
+{% load static %}
+
+
+{% block content %}
+
+<section class="main container">
+    <div class="cards">
+        <div class="card">
+           <div class="card-details">
+            <h3>Weekly sales</h3>
+            <div>
+                <canvas id="weeklySales"></canvas>
+            </div>
+           </div>
+
+        </div>
+
+        <div class="card">
+            <div class="card-detail">
+                <h3>Total orders</h3>
+                <h4>1240 orders</h4>
+                <span class="progress" data-value="90%"></span>
+            </div>
+          
+           
+        </div>
+
+        <div class="card">
+            <h3>leading products</h3>
+            <li>laptops</li>
+            <li>phones</li>
+            <li>digital TVS</li>
+            <span class="progress" data-value="70%"></span>
+        </div>
+
+        <div class="card">
+            <h3>pending orders</h3>
+            <h4>280</h4>
+
+            <span class="progress" data-value="90%"></span>
+        </div>
+    </div>
+
+
+    <div class="big-cards">
+        <div class="card">
+            <div class="totals">
+                <h3>Last sales: $488</h3>
+                <h3>Total month sales: $123000</h3>
+                <h3>last year sales: $65400567</h3>
+    
+            </div>
+
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>Trending product</th>
+                        <th>sales rate</th>
+                        <th>amount</th>
+                    </tr>
+
+                    <tr>
+                        <td><a href="">Lenovo laptop </a><span>+0.8</span></td>
+                        <td>27%</td>
+                        <td>$19824</td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="">HP laptop </a><span>+1.2</span></td>
+                        <td>29%</td>
+                        <td>$21668</td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="">iPhone 13 pro </a><span>+1.3</span></td>
+                        <td>33%</td>
+                        <td>$22367</td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="">iphone 12</a> <span>+0.6</span></td>
+                        <td>19%</td>
+                        <td>$16367</td>
+                    </tr>
+                </table>
+            </div>
+            
+        </div>
+
+         <div class="card">
+            <h3>Total sales</h3>
+            <div>
+                <canvas id="sales"></canvas>
+              </div>
+        </div>
+    </div>
+
+    <div class="purchases">
+        <div class="shopping-cart">
+            <div class="card">
+                <h3>Active users</h3>
+                <div class="user">
+                    <div class="user-data">
+                        <img src="./images/profile1.jpg" alt="">
+                        <div class="user-role">
+                            <p>Jackson Mwangi</p>
+                            <h6>Admin</h6>
+                        </div>
+                    </div>
+
+                    <div class="user-data">
+                        <img src="./images/profile1.jpg" alt="">
+                        <div class="user-role">
+                            <p>Jackson Mwangi</p>
+                            <h6>Editor</h6>
+                        </div>
+                    </div>
+
+                    <div class="user-data">
+                        <img src="./images/profile1.jpg" alt="">
+                        <div class="user-role">
+                            <p>Jackson Mwangi</p>
+                            <h6>moderator</h6>
+
+                        </div>
+                    </div>
+
+                    <div class="user-data">
+                        <img src="./images/profile1.jpg" alt="">
+                        <div class="user-role">
+                            <p>Jackson Mwangi</p>
+                            <h6>Editor</h6>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+
+        </div>
+        <div class="recent-purchases">
+            <div class="card">
+                <div class="header">
+                    <h4>Recent purchases</h4>
+                    <div class="buttons">
+                        <a href="#"><i class="fa-solid fa-add"></i>New</a>
+                        <a href="#"><i class="fa-solid fa-filter"></i>Filter</a>
+                        <a href="#"><i class="fa-solid fa-file-export"></i>Export</a>
+                    </div>
+                   
+                </div>
+
+                <div class="table">
+                    <table>
+                        <tr class="thead">
+                            <td><h4>Customer</h4></td>
+                            <td><h4>Email</h4></td>
+                            <td><h4>Product</h4></td>
+                            <td><h4>Payment</h4></td>
+                            <td><h4>Amount</h4></td>
+                        </tr>
+                        <tr>
+                            <td>Mary Wamuyu</td>
+                            <td>marywamuyu@gmail.com</td>
+                            <td>iPhone 13 pro</td>
+                            <td class="success">success</td>
+                            <td>$2004</td>
+                        </tr>
+
+                        <tr>
+                            <td>Mary Wamuyu</td>
+                            <td>marywamuyu@gmail.com</td>
+                            <td>iPhone 13 pro</td>
+                            <td class="success">success</td>
+                            <td>$2004</td>
+                        </tr>
+
+                        <tr>
+                            <td>Mary Wamuyu</td>
+                            <td>marywamuyu@gmail.com</td>
+                            <td>iPhone 13 pro</td>
+                            <td class="success">success</td>
+                            <td>$2004</td>
+                        </tr>
+
+                        <tr>
+                            <td>Mary Wamuyu</td>
+                            <td>marywamuyu@gmail.com</td>
+                            <td>iPhone 13 pro</td>
+                            <td>
+                                <div id="fail">
+                                    Failed
+                                </div>
+                            </td>
+                            <td>$2004</td>
+                        </tr>
+
+                        <tr>
+                            <td>Mary Wamuyu</td>
+                            <td>marywamuyu@gmail.com</td>
+                            <td>iPhone 13 pro</td>
+                            <td class="success">success </td>
+                            <td>$2004</td>
+                        </tr>
+
+                        <tr>
+                            <td>Mary Wamuyu</td>
+                            <td>marywamuyu@gmail.com</td>
+                            <td>iPhone 13 pro</td>
+                            <td class="success">success</td>
+                            <td>$2004</td>
+                        </tr>
+
+                        <tr>
+                            <td>Mary Wamuyu</td>
+                            <td>marywamuyu@gmail.com</td>
+                            <td>iPhone 13 pro</td>
+                            <td>
+                                <div id="success">
+                                    success 
+                                </div>
+                            </td>
+                            <td>$2004</td>
+                        </tr>
+
+                        <tr>
+                            <td>Mary Wamuyu</td>
+                            <td>marywamuyu@gmail.com</td>
+                            <td>iPhone 13 pro</td>
+                            <td class="success">success</td>
+                            <td>$2004</td>
+                        </tr>
+
+                        <tr>
+                            <td>Mary Wamuyu</td>
+                            <td>marywamuyu@gmail.com</td>
+                            <td>iPhone 13 pro</td>
+                            <td class="success">success</td>
+                            <td>$2004</td>
+                        </tr>
+
+                        <tr>
+                            <td>Mary Wamuyu</td>
+                            <td>marywamuyu@gmail.com</td>
+                            <td>iPhone 13 pro</td>
+                            <td class="success">success</td>
+                            <td>$2004</td>
+                        </tr>
+
+                        
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+ 
+ </section>
+
+
+
+
+  <script src="{% static 'app.js'%}"></script>  
+
+  <script>
+    const totalOrders = document.getElementById('weeklySales');
+  
+    new Chart(totalOrders, {
+      type: 'bar',
+      data: {
+        labels: ['Monday', 'TUesday', 'Wednesday', 'Thursday', 'Friday'],
+        datasets: [{
+          label: 'order',
+          data:[60, 55, 218, 76, 120],
+          borderWidth: 0,
+          borderColor: 'blue',
+          backgroundColor: [
+            'red',
+            'green',
+            'blue',
+            'orange',
+            'aqua'
+          ]
+         
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+
+
+  <script>
+    const ctx = document.getElementById('sales');
+  
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['January', 'february', 'march', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+        datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 16, 20, 3, 16, 81, 22, 15, 66, 55],
+          borderWidth: 2,
+          borderColor: 'rgb(11, 157, 219)',
+          backgroundColor: 'rgb(11, 157, 219)',
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+
+{% endblock content %}

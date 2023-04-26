@@ -1,0 +1,59 @@
+{% extends 'dashboard/base.html'%}
+{% load static %}
+
+{% block content %}
+<div class="products-table">
+
+<div class="recent-purchases">
+    <div class="container">
+    <div class="card">
+        <div class="header">
+            <h2>PRODUCTS ( {{total_products}}  products ) </h2>
+            {% for message in messages %}
+            <p>{{message}}</p>
+            {% endfor %}
+            <div class="buttons">
+                <a href="{% url 'add_product' %}"><i class="fa-solid fa-add"></i>New</a>
+                <a href="#"><i class="fa-solid fa-filter"></i>Filter</a>
+                <a href="#"><i class="fa-solid fa-file-export"></i>Export</a>
+            </div>
+           
+        </div>
+        {% if products %}
+        <div class="table">
+            <table>
+                <tr class="thead">
+                    <td><h4>P_ID</h4></td>
+                    <td><h4>PRODUCT IMAGE</h4></td>
+                    <td><h4>PRODUCT NAME</h4></td>
+                    <td><h4>QUANTITY</h4></td>
+                    <td><h4>CATEGORY</h4></td>
+                    <td><h4>UNIT PRICE</h4></td>
+                </tr>
+                {% for product in products %}
+                <tr>
+                    <td>{{ product.product_id }}</td>
+                    <td><img src="{{ product.product_image.url }}" alt=""></td>
+                    <td>{{ product.product_name }}</td>
+                    <td>{{ product.quantity }}</td>
+                    <td>{{ product.category }}</td>
+                    <td>{{ product.unit_price }}</td>
+                    <td><a href="{% url 'update_product' product.pk %}">Edit</a></td>
+                    <td><a href="{% url 'delete' product.pk %}"><i class="fa fa-solid fa-trash"></i></a></td>
+                  
+                </tr>
+                {% endfor %}
+
+               
+
+                
+            </table>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+</div>
+</div>
+
+{% endblock content %}

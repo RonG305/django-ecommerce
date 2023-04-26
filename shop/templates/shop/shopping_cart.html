@@ -1,0 +1,51 @@
+{% extends 'shop/base.html'%}
+{% load static %}
+
+{% block title%} cart {% endblock title%}
+
+{% block content %}
+    <div class="cart" id="cart">
+        <div class="container">
+            <div class="cart-header">
+                <h4>Shopping cart (7 items)</h4>
+                <div class="shop-now">
+                    <a href="{% url 'product'%}">continue shopping</a>
+                    <a href="{% url 'checkout'%}">checkout</a>
+                </div>
+               
+            </div>
+            <div class="cart-table">
+                <table>
+                    <tr>
+                        <td class="thead">Image</td>
+                        <td class="thead">Name</td>
+                        <td class="thead">quantity</td>
+                        <td class="thead">price</td>
+                    </tr>
+
+                    <tr>
+                        <td><img src="./static/images/smart tv2.png" alt=""></td>
+                        <td>Lenovo idepad 330s 1TB internal storage, 64GB RAM</td>
+                        <td>2</td>
+                        <td>ksh 105000</td>
+                    </tr>
+
+                    <tr>
+                        <td><img src="" alt="image"></td>
+                        <td>Lenovo idepad 330s 1TB internal storage, 64GB RAM</td>
+                        <td>2</td>
+                        <td>ksh 105000</td>
+                    </tr>
+
+                    <tr>
+                        <td><img src="" alt="image"></td>
+                        <td>Lenovo idepad 330s 1TB internal storage, 64GB RAM</td>
+                        <td>2</td>
+                        <td>ksh 105000</td>
+                    </tr>                    
+                </table>
+            </div>
+           
+        </div>
+    </div>
+{%endblock content %}

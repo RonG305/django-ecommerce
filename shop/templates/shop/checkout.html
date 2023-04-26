@@ -1,0 +1,73 @@
+{% extends 'shop/base.html'%}
+{% load static %}
+
+{% block title %} checkout {% endblock title %}
+
+{% block content %}
+<div class="checkout">
+    <div class="container">
+        <div class="checkout-container">
+            <h3 id="checkout">Checkout</h3>
+            <p>complete your purchase by providing your payment details.</p>
+            <h3>payment method</h3>
+            <div class="payment">
+                <p>MPESA</p>
+                <p>PAYPAL</p>
+            </div>
+            <h3>Contact information</h3>
+            <div class="contact-form">
+                <form action="">
+                    <input type="text" placeholder="first name">
+                    <input type="text" placeholder="last name">
+                    <input type="email" placeholder="Enter email">
+                    <input type="number" placeholder="phone number">
+                    <select name="" id="">
+                        <option value="mombasa">Mombasa</option>
+                        <option value="Nairobi">Nairobi</option>
+                        <option value="Kisumu">Kisumu</option>
+                        <option value="Eldoret">Eldoret</option>
+                        <option value="Nakuru">Nakuru</option>
+                    </select>
+                    <input type="text" placeholder="To">
+
+                    <input type="submit" class="submit">
+                </form>
+            </div>
+        </div>
+
+        <div class="cart-totals">
+            <div class="cart-card">
+                <p>Manage your payment</p>
+            </div>
+            <h5>manage cards</h5>
+            <p>Total Items: <strong>7</strong></p>
+
+            <div class="cal-total">
+                <p>Subtotal</p>
+                <strong>kshs 20000</strong>
+            </div>
+
+            <div class="cal-total">
+                <p>Discount</p>
+                <strong class="discount"> -kshs 1500</strong>
+            </div>
+            <div class="cal-total">
+                <p>Delivery fee</p>
+                <strong>Free</strong>
+            </div>
+
+            <div class="cal-total">
+                <p>Total</p>
+                <strong>kshs 18000</strong>
+            </div>
+
+          
+            <a href="" class="pay-btn">Pay ksh 18000</a>
+           
+
+        </div>
+       
+    </div>
+</div>
+
+{% endblock content %}

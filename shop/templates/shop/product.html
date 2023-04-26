@@ -1,0 +1,64 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block title %}products{% endblock title %}
+
+{% block content %}
+
+<section>
+    <div class="best-deals">
+        <div class="container">
+            <h2>Best deals for you!</h2>
+            <ul>
+                <li><a href="{% url 'product'%}">All</a></li>
+                {% for category in categories %}
+                <li><a href="{% url 'product'%}?category={{category.category_name}}">{{category.category_name}}</a></li>
+                
+                {% endfor %}
+            </ul>
+            {% if products %}
+            
+            <div class="deal-container">
+                {% for product in products %}
+                <div class="deal">
+                    <a href="{% url 'product_details' product.pk %}">
+                        <div class="image">
+                            <img src="{{ product.product_image.url }}" alt="">
+                        </div>
+                        <div class="data">
+                            
+                            <a href="#">{{ product.product_name }}</a>
+                            <p>{{ product.category }}</p>
+                            <div class="shop-item">
+                                <div class="cost">
+                                    <h4>ksh {{ product.unit_price}}  <s>kshs {{ product.old_price }}</s></h4>
+                                </div>
+                                <div class="shop">
+                                    <button><i class="fa-solid fa-heart"></i></button>
+                                    <button><i class="fa-solid fa-cart-shopping"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </a>
+                </div>  
+                {% endfor %}
+            </div>
+
+            {% else %}
+
+            <div class="null-products">
+                <div class="display-text">
+                    <h3>Sorry! No products has been uploded yet! </h3>
+                </div>
+            </div>
+
+            
+            {% endif %}
+            
+           
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

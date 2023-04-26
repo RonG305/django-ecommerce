@@ -1,0 +1,46 @@
+{% extends 'shop/base.html'%}
+{% load static %}
+
+{% block title %}products desctiption {% endblock title %}
+
+
+
+{% block content %}
+<div class="product-details">
+    <div class="container">
+        <div class="image">
+            <img src="{{ product.product_image.url }}" alt="">
+           
+        </div>
+        <div class="product-description">
+            <p>{{ product.product_name }}</p>
+           <h2>{{ product.product_description }}</h2>
+            <div class="category">
+                <a href="#">{{ product.category}}</a>
+            </div>
+            <div class="shop-item">
+                <div class="cost">
+                    <h4>ksh {{ product.unit_price }}  <s>ksh {{ product.old_price }}</s></h4>
+                    <h4>Dicount: {{ discount }} %</h4>
+                </div>
+                
+            </div>
+            <div class="cart">
+                <a href="#">add to cart</a>
+                <div class="likes">
+                    <button> <i class="fa fa-solid fa-heart"></i> 70</button>
+                </div>
+            </div>
+
+            <a href="{% url 'shopping_cart'%}" id="add-to-cart" class="add-to-cart">add to cart</a>
+
+            <div class="num-items">
+                <button id="add-tems"><i class="fa fa-solid fa-add"></i></button>
+                <button id="total-items"><input type="number" value="0"></button>
+                <button id="reduce-items"><i class="fa fa-solid fa-minus"></i></button>
+            </div>
+            
+        </div>
+    </div>
+</div>
+{% endblock content %}

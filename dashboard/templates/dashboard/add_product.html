@@ -1,0 +1,19 @@
+{% extends 'dashboard/base.html'%}
+{% load static %}
+
+{% block content %}
+
+<div class="product-form">
+    <div class="container">
+        <div class="card">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                <input type="submit" class="submit">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

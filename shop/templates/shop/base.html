@@ -1,0 +1,122 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-shop | {% block title %} Home {% endblock title %}</title>
+
+        <!-- font awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!-- Google fonts -->
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Lobster&family=Playball&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="{% static 'shop.css'%}">
+
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <aside>
+        <div class="toggler">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div id="sidebar" >
+            <div class="sidebar-links">
+                <ul>
+                    <li><a href="{% url 'shop'%}">Home</a></li>
+                    <li><a href="{% url 'product'%}">Products</a></li>
+                    <li><a href="#">What's new</a></li>
+                    <li><a href="#">Hot deals</a></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+    <marquee behavior="" direction=""></marquee>
+    <nav>
+        <div id="navbar">
+            <div class="container">
+
+                <div class="nav-logo">
+                    <img src="./static/images/shop icon.jpg" alt="">
+                </div>
+
+                <div class="product-search">
+                    <form action="">
+                        <input type="text" placeholder="Search product...">
+                        <span><i class="fa-solid fa-search"></i></span>
+                    </form>
+                </div>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="{% url 'shop'%}">Home</a></li>
+                        
+                        <li><a href="{% url 'product'%}">products</a></li>
+                        <li><a href="#">Whats new!</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+   {% block content %}
+
+   {% endblock content %}
+
+    <section>
+        <div class="footer">
+            <div class="container">
+                <div class="footer-details">
+                    <div class="footer-section">
+                        <img src="./static/images/shop icon.jpg" alt="">
+                        <h2>shopIt</h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda officia soluta nisi culpa rem laudantium.</p>
+                        <div class="payments">
+                            <a href="#"><img src="./static/images/mpesa logo.png" alt=""></a>
+                            <img src="./static/images/card.jpg" alt="">
+                            <img src="./static/images/paypal.png" alt="">
+                        </div>
+                    </div>
+    
+                    <div class="footer-section">
+                        <h3>Department</h3>
+                        <li><a href="">Beverages </a></li>
+                        <li><a href="">Frozen Foods</a></li>
+                        <li><a href="">Office supplies</a></li>
+                        <li><a href="">Beauty products</a></li>
+                        <li><a href="">Electronics & Gadgets </a></li>
+                    </div>
+    
+                    <div class="footer-section">
+                        <h3>About Us</h3>
+                        <li><a href="">Careers</a></li>
+                        <li><a href="">24/7 service</a></li>
+                        <li><a href="">News & blog</a></li>
+                        <li><a href="">Shop by location</a></li>
+                    </div>
+    
+                    <div class="footer-section">
+                        <h3>Contacts</h3>
+                        <li>+254 790 021 016</li>
+                        <li>+254 704 309 784</li>
+                        <li>mutiaronald138@gmail.com</li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </section>
+
+    <script src="{% static 'shop.js'%}"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
